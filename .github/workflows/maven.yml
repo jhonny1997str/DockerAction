@@ -33,7 +33,7 @@ jobs:
       - name: Build & push Docker image
         uses: docker/build-push-action@v3  # Se utiliza la acción oficial de Docker para Build & Push
         with:
-          context: .  # El directorio donde se encuentra tu Dockerfile
+          context: .  # El dirctorio donde se encuentra tu Dockerfile
           file: Dockerfile  # Asegúrate de que el Dockerfile esté en la raíz o ajusta la ruta
           push: true  # Esto hace que se suba la imagen al repositorio Docker Hub
           tags: jhonnystr/docker-repo-java:latest  # Etiqueta para la imagen en Docker Hub
