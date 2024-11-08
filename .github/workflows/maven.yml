@@ -10,6 +10,17 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    services:
+      postgres:
+        image: postgres:latest
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: solocali123#
+          POSTGRES_DB: docker_action
+        options: --health-cmd="pg_isready -U postgres" --health-interval=5s --health-timeout=2s --health-retries=5
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
@@ -31,9 +42,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build & push Docker image
-        uses: docker/build-push-action@v3  # Se utiliza la acción oficial de Docker para Build & Push
+        uses: docker/build-push-action@v3
         with:
-          context: .  # El dirctorio donde se encuentra tu Dockerfile
-          file: Dockerfile  # Asegúrate de que el Dockerfile esté en la raíz o ajusta la ruta
-          push: true  # Esto hace que se suba la imagen al repositorio Docker Hub
-          tags: jhonnystr/docker-repo-java:latest  # Etiqueta para la imagen en Docker Hub
+          context: .
+          file: Dockerfile
+          push: true
+          tags: jhonnystr/docker-repo-java:latest
