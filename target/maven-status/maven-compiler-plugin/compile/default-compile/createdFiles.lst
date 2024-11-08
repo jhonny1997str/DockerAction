@@ -1,1 +1,6 @@
+com\javatechie\cicd\models\Usuario.class
+com\javatechie\cicd\repository\usuarioRepository.class
+com\javatechie\cicd\service\usuarioServiceImp.class
+com\javatechie\cicd\controller\usuarioController.class
 com\javatechie\cicd\GithubCicdActionsApplication.class
+com\javatechie\cicd\service\usuarioService.class

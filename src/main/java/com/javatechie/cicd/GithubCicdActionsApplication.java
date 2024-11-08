@@ -6,13 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
-@RestController
+
 public class GithubCicdActionsApplication {
 
-	@GetMapping("/welcome")
-	public String welcome(){
-		return "Welcome to God's salvation.. ";
-	}
+
 
 //	echo "# github-actions-example" >> README.md
 //	git init
