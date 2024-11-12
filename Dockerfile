@@ -4,7 +4,7 @@ FROM openjdk:21
 # Expone el puerto 8080
 EXPOSE 8080
 
-# Añade el archivo JAR de la aplicación al contenedor
+# Añade el archivo JAR de la aplicación al contenedorr
 ADD target/docker-repo-java.jar docker-repo-java.jar
 
 # Define el comando para ejecutar la aplicación
